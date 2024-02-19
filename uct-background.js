@@ -2,7 +2,7 @@
 
 this.defaultSettings = {
     toggles: [{
-            name: 'userchrome style',
+            name: 'Style 1',
             enabled: true,
             prefix: '\u180E',
             state: false
@@ -18,12 +18,30 @@ this.defaultSettings = {
             enabled: false,
             prefix: '\u200C',
             state: false
+        },
+        {
+            name: 'Style 4',
+            enabled: false,
+            prefix: '\u200D',
+            state: false
+        },
+        {
+            name: 'Style 5',
+            enabled: false,
+            prefix: '\u200E',
+            state: false
+        },
+        {
+            name: 'Style 6',
+            enabled: false,
+            prefix: '\u200F',
+            state: false
         }
     ],
     general: {
         settingsVersion: 1.1,
         allowMultiple: false,
-        notifyMe: true
+        notifyMe: false
     }
 }
 

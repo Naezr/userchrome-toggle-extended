@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"name": "Userchrome Toggle",
+	"name": "Userchrome Toggle Extended",
 	"version": "1.2",
 	"description": "This extension allows you to toggle userchrome.css styles on-the-fly with buttons and hotkeys.",
 	"icons": {
@@ -8,7 +8,7 @@
 	},
 	"browser_specific_settings": {
 		"gecko": {
-			"id": "userchrome-toggle@joolee.nl"
+			"id": "userchrome-toggle-extended@n2ezr.ru"
 		}
 	},
 	"browser_action": {
@@ -40,7 +40,26 @@
 				"default": "Ctrl+Shift+3"
 			},
 			"description": "Toggle userchrome style 3"
+		},
+		"toggle-style-4": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+4"
+			},
+			"description": "Toggle userchrome style 4"
+		},
+		"toggle-style-5": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+5"
+			},
+			"description": "Toggle userchrome style 5"
+		},
+		"toggle-style-6": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+6"
+			},
+			"description": "Toggle userchrome style 6"
 		}
+		
 	},
 	"options_ui": {
 		"page": "options/options.html",
