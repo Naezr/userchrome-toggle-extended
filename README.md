@@ -3,7 +3,7 @@
 
 The userchrome.css file lets you customize the Firefox interface deeply. While very powerful, any changes will require a restart of the browser to take effect.
 
-This [Firefox extension](https://addons.mozilla.org/firefox/addon/userchrome-toggle/) adds a new button to your toolbar that allows you to toggle custom userchrome.css styling on-the fly. The magic happens by including special CSS selectors in your user styles. Manipulating those selectors allows you to enable/disable up to three of your modifications on-the-fly.
+This [Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/userchrome-toggle-extended/) adds a new button to your toolbar that allows you to toggle custom userchrome.css styling on-the fly. The magic happens by including special CSS selectors in your user styles. Manipulating those selectors allows you to enable/disable up to three of your modifications on-the-fly.
 
 The addon accomplishes this by changing the browsers 'title prefix' attribute. Don't worry! By using invisible UTF-8 characters by default, you won't even notice a thing! Toggle a single style or select up to three styles to toggle in a drop-down menu. Hardcore keyboard users can even use customizable keyboard-shortcuts.
 
@@ -25,5 +25,3 @@ Select multiple styles to be active together
 Sample of the settings for a single toggle
 
 
-# Get help
-* Report issues or feature requests in the [bug tracker](https://github.com/Joolee/userchrome-toggle/issues)
