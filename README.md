@@ -1,5 +1,5 @@
 # Userchrome Toggle
-<img align="right" src="https://github.com/Joolee/userchrome-toggle/raw/main/images/icon.svg" width="175">
+<img align="right" src="https://github.com/Naezr/userchrome-toggle-extended/raw/main/images/icon.svg" width="175">
 
 The userchrome.css file lets you customize the Firefox interface deeply. While very powerful, any changes will require a restart of the browser to take effect.
 
