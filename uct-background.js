@@ -4,42 +4,42 @@ this.defaultSettings = {
     toggles: [{
             name: 'Style 1',
             enabled: true,
-            prefix: '\u180E',
+            prefix: '-',
             state: false
         },
         {
             name: 'Style 2',
-            enabled: false,
-            prefix: '\u200B',
+            enabled: true,
+            prefix: '=',
             state: false
         },
         {
             name: 'Style 3',
-            enabled: false,
-            prefix: '\u200C',
+            enabled: true,
+            prefix: '+',
             state: false
         },
         {
             name: 'Style 4',
             enabled: false,
-            prefix: '\u200D',
+            prefix: '?',
             state: false
         },
         {
             name: 'Style 5',
             enabled: false,
-            prefix: '\u200E',
+            prefix: '!',
             state: false
         },
         {
             name: 'Style 6',
             enabled: false,
-            prefix: '\u200F',
+            prefix: '/',
             state: false
         }
     ],
     general: {
-        settingsVersion: 1.1,
+        settingsVersion: 1.2,
         allowMultiple: false,
         notifyMe: false
     }
@@ -186,8 +186,7 @@ async function userToggle(styleId, newState) {
         // Invert toggle state or set requested state and save in settings
         toggle = settings.toggles[styleId - 1];
 
-        if (typeof(newState) == 'undefined')
-            newState = !toggle.state;
+        newState = !toggle.state;
 
         settings.toggles[styleId - 1].state = newState;
 

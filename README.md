@@ -8,19 +8,19 @@ This [Firefox extension](https://addons.mozilla.org/en-US/firefox/addon/userchro
 The addon accomplishes this by changing the browsers 'title prefix' attribute. Don't worry! By using invisible UTF-8 characters by default, you won't even notice a thing! Toggle a single style or select up to three styles to toggle in a drop-down menu. Hardcore keyboard users can even use customizable keyboard-shortcuts.
 
 # Screenshots
-<img width="300" src="https://github.com/Joolee/userchrome-toggle/raw/main/.github/assets/single-toggle.png">
+<img width="300" src="https://github.com/Naezr/userchrome-toggle-extended/raw/main/.github/assets/single-toggle.png">
 
 Toggle a single style with the toolbar button
 
-<img width="300" src="https://github.com/Joolee/userchrome-toggle/raw/main/.github/assets/multiple-radio.png">
+<img width="300" src="https://github.com/Naezr/userchrome-toggle-extended/raw/main/.github/assets/multiple-radio.png">
 
 Switch between different styles
 
-<img width="300" src="https://github.com/Joolee/userchrome-toggle/raw/main/.github/assets/multiple-checkbox.png">
+<img width="300" src="https://github.com/Naezr/userchrome-toggle-extended/raw/main/.github/assets/multiple-checkbox.png">
 
 Select multiple styles to be active together
 
-<img width="684" src="https://github.com/Joolee/userchrome-toggle/raw/main/.github/assets/settings-toggle.png">
+<img width="684" src="https://github.com/Naezr/userchrome-toggle-extended/raw/main/.github/assets/settings-toggle.png">
 
 Sample of the settings for a single toggle
 
