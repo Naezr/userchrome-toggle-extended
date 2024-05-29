@@ -9,12 +9,17 @@ async function documentLoaded() {
     attachClipboardButtons();
     document.getElementById('save-general').addEventListener('click', event => saveGeneralSettings(event));
 
+    const sending =browser.runtime.sendMessage({
+        type: 'getDefaults',
+    });
+    sending.then(response => {
+        globalThis.defaultSettings = response.content;
+    })
 }
 
 // Retrieves latest settings from the settings store and fills out the form
 async function fillSettings() {
     let settings = await browser.storage.local.get(['toggles', 'general']);
-    let defaultSettings = browser.extension.getBackgroundPage().defaultSettings;
     let toggles = settings.toggles;
 
     document.getElementById('allowmultiple').checked = settings.general.allowMultiple;
@@ -22,16 +27,6 @@ async function fillSettings() {
 
     for (let i = 0; i < toggles.length; i++) {
         let prefixId = i + 1;
-        let defaultWarning = document.getElementById(`default-warning-${prefixId}`);
-
-        // Displays a warning when the default value is active. This is an empty-looking value that might be confusing
-        if (defaultWarning) {
-            if (defaultSettings.toggles[i].prefix == toggles[i].prefix) {
-                defaultWarning.style.display = 'block';
-            } else {
-                defaultWarning.style.display = 'none';
-            }
-        }
         document.getElementById(`enable-${prefixId}`).checked = toggles[i].enabled;
         document.getElementById(`name-${prefixId}`).value = toggles[i].name;
         document.getElementById(`prefix-${prefixId}`).value = toggles[i].prefix;
@@ -90,7 +85,9 @@ async function saveChanges(prefixId) {
     await browser.storage.local.set(settings);
 
     // Let the toolbar button reflect the changes
-    browser.extension.getBackgroundPage().updateButtonStatus();
+    browser.runtime.sendMessage({
+        type: 'updButtonStatus',
+    });
 
     document.getElementById(`save-message-${prefixId}`).style.display = "block";
     setTimeout(() => {
@@ -108,9 +105,9 @@ function attachRestoreDefault() {
 
 // Populate 'prefix' field with default setting again
 function restoreDefault(prefixId) {
-    let defaultSettings = browser.extension.getBackgroundPage().defaultSettings;
     document.getElementById(`prefix-${prefixId}`).value = defaultSettings.toggles[prefixId - 1].prefix;
     updateSelector(prefixId);
+    console.log('Restored default value of', prefixId);
 }
 
 // Attaches event listeners to the 'copy to clipboard' buttons

@@ -65,7 +65,7 @@ async function main() {
 // Update user settings to new defaults after updating the extension
 async function updateSettings(settings) {
     if (settings.general.settingsVersion < defaultSettings.general.settingsVersion) {
-        if (settings.general.settingsVersion < 1.1) {
+        if (settings.general.settingsVersion < 1.2) {
             settings.general.notifyMe = defaultSettings.general.notifyMe;
         }
 
@@ -211,5 +211,22 @@ async function userToggle(styleId, newState) {
     updateButtonStatus();
 }
 
+function handleMessage(message, sender, sendResponse) {
+    if (message.type == 'toggle') {
+        userToggle(message.id, message.state);
+    }
+
+    if (message.type == 'updButtonStatus') {
+        updateButtonStatus();
+    }
+
+    if (message.type == 'getDefaults') {
+        sendResponse({
+            content: defaultSettings
+        });
+    }
+}
+
+browser.runtime.onMessage.addListener(handleMessage);
 
 main();

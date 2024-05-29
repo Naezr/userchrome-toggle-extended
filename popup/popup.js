@@ -35,7 +35,11 @@ function addSelectRow(type, styleId, name, state) {
     selector.checked = state
     selector.addEventListener('change', event => {
         console.log('Changed', event.target.id);
-        browser.extension.getBackgroundPage().userToggle(event.target.id, event.target.checked);
+        browser.runtime.sendMessage({
+            type: 'toggle',
+            id: event.target.id, 
+            state: event.target.checked,
+        });
     });
 
     let label = document.createElement('label');
@@ -44,6 +48,6 @@ function addSelectRow(type, styleId, name, state) {
     label.textContent = name;
 
     document.getElementById('content').appendChild(container);
-
 }
+
 document.addEventListener('DOMContentLoaded', documentLoaded);

@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Userchrome Toggle Extended",
-	"version": "1.4",
+	"version": "1.5",
 	"description": "This extension allows you to toggle userchrome.css styles on-the-fly with buttons and hotkeys.",
 	"icons": {
 		"48": "images/icon.svg"

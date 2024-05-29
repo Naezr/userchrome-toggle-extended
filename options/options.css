@@ -1,0 +1,17 @@
+.helpAvailable {
+	cursor: help;
+}
+
+a.external::after {
+	background: transparent url('../images/remote-link.svg') 0 0 no-repeat;
+	background-size: 16px;
+	content: "";
+	height: 16px;
+	margin-left: 3px;
+	width: 16px;
+	display: inline-block;
+}
+
+input[type=checkbox] {
+	min-width: 16px;
+}
