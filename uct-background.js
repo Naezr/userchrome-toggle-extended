@@ -59,6 +59,10 @@ async function main() {
 
     // Trigger on registered hotkeys
     browser.commands.onCommand.addListener(userToggle);
+
+    // Initialize new windows
+    browser.windows.onCreated.addListener((window) => updateTitlePrefixes(window));
+
     console.log('Init complete');
 }
 
@@ -134,9 +138,10 @@ async function toggleTitlePrefix(windowId, titlePrefix) {
 }
 
 // Update prefix for specified window
-async function updateTitlePrefixes() {
-    // Only change current window
-    const windowId = await browser.windows.getCurrent();
+async function updateTitlePrefixes(windowId) {
+    // Default to current window
+    windowId ??= await browser.windows.getCurrent();
+
     const settings = await browser.storage.local.get(['toggles', 'general']);
     const toggles = settings.toggles;
     let titlePrefix = '';
